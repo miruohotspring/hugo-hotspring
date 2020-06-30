@@ -1,0 +1,5 @@
+baseURL = "http://miruohotspring.net/"
+languageCode = "ja"
+title = "miruohotspring"
+theme = "hugo-sugoi-master"
+hasCJKLanguage = true
