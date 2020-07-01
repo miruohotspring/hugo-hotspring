@@ -3,15 +3,4 @@
                 class="fas fa-fire" aria-hidden="true"></i>
             Sugoi</span></label>
     <input type="checkbox" id="drop" />
-    <ul class="menu">
-        <li><a href="{{ .Site.BaseURL }}"><span><i class="fas fa-fire" aria-hidden="true"></i>
-                    Sugoi</span></a></li>
-        {{ range .Site.Menus.nav }}
-        <li class="u-pull-right">
-            <a href="{{ .URL | absLangURL }}" class="Members">
-                <span>{{ .Pre }} {{ .Name }}</span>
-            </a>
-        </li>
-        {{ end }}
-    </ul>
 </nav>
