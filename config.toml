@@ -1,11 +1,11 @@
 baseURL = "https://miruohotspring.net/"
 languageCode = "ja"
-title = "みるを温泉"
+title = "温泉"
 theme = "mytheme"
 disableKinds = ["categories", "terms"]
 
 [params]
-    herolink = "http://localhost:1313/"
+    herolink = "https://miruohotspring.net/"
     herolinktext = "TOP"
     favicon = "favicon.ico"
 

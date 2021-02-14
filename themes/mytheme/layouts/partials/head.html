@@ -1,9 +1,14 @@
 <meta charset="utf-8">
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else if .Page.Title }}{{ .Page.Title }} - {{ .Site.Title }}{{ end }}</title>
-<meta name="description"
-    content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
 {{ with .Site.Params.author }}
 <meta name="author" content="{{ . }}">{{ end }}
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@miruohotspring" />
+<meta property="og:url" content={{ .Page.Permalink }} />
+<meta property="og:title" content={{ .Page.Title }} />
+{{ $img := "1036miruohotspring_round.png" | absURL }}
+<meta property="og:image" content={{ $img }} />
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
