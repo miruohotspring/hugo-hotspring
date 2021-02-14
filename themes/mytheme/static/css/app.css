@@ -1,0 +1,98 @@
+html, body{
+    height: 100%;
+}
+
+h1 {
+    font-family: "AvenirNext-Medium";
+    color: #333;
+    font-size: calc(1.67583rem + 1.13257 * ((100vw - 20rem)  / 100) );
+    line-height: 1.3em;
+    font-weight: bold;
+}
+
+footer{
+    margin-top: auto;
+    width: 100vw;
+    bottom: 0;
+    min-height: 10vh;
+    background-color: orange;
+}
+
+footer p{
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+.author-date{
+    float: none;
+}
+.title-area{
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    height: calc(45vh - 80px);
+    min-height: 80px;
+    padding-top: 20px;
+    background-color: orange;
+}
+
+.logo{
+    color:#fff!important;
+    font-size:1.21363rem;
+    font-weight:normal;
+}
+
+.logo:hover{
+    text-decoration:none
+}
+
+.logo-area{
+    width: calc(100% - 50px);
+    padding-right: 10px;
+    position: absolute;
+    padding-left: 50px;
+    z-index: 10;
+}
+
+.content-wrapper{
+    max-width: calc(42rem + 16%);
+    min-height: calc(45vh - 100px);
+    padding: 0 4%;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    position: relative;
+}
+
+.content{
+    max-width: 46em;
+    margin: 0px auto;
+    padding: 1.57143em 3.14286em;
+}
+
+.menu{
+    height: 80px;
+    width: 100%;
+    padding: 4% 2%;
+    margin-bottom: 5%;
+}
+
+.button{
+    padding-top: 10px;
+    margin: 0 2% 0;
+    height: 40px;
+    width: 80px;
+    border: 1px solid orange;
+    text-align: center;
+    float: left;
+    max-width: 29%;
+    line-height: 0;
+}
+.button a{
+    color: orange;
+    font-size: 1rem;
+}
+.router {
+    min-height: calc(45vh);
+}
+

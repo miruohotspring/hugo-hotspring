@@ -5,23 +5,25 @@
         <a class="logo" href={{ .Site.BaseURL }}>みるを温泉</a>
     </div>
     <div class="content-wrapper" style="min-height: calc(45vh - 100px);">
-        <h1 style="color: white; position: absolute; bottom: 10px">みるを温泉</h1>
+        <h1 style="color: white; position: absolute; bottom: 10px">#{{ .Title }}</h1>
     </div>
 </header>
 
 <div class="content-wrapper" style="padding-top: 50px">
-{{ range .Site.RegularPages }}
+{{ range $elem := .Data.Pages }}
     <div>
+        {{ if $elem.Content }}
         <div class="author-date">
-            <p>by <b><a href="/profile" style="color: #545454">{{ .Params.author }}</a></b>, {{ .PublishDate.Format "2006年1月2日 3:4" }}</p>
+            <p>by <b><a href="/profile" style="color: #545454">{{ $elem.Params.author }}</a></b>, {{ $elem.PublishDate.Format "2006年1月2日 3:4" }}</p>
         </div>
-        <a href={{ .Permalink }}><h1>{{ .Title }}</h1></a>
-        <p>{{ range .Params.tags }}
+        {{ end }}
+        <a href={{ .Permalink }}><h1>{{ $elem.Title }}</h1></a>
+        <p>{{ range $elem.Params.tags }}
             <span class='hashtag'><a href="/tags/{{ . }}/">#{{ . }}</a></span>
             {{ end }}
         </p>
-        <p>{{ .Summary }}</p>
-        {{ if .Truncated }}
+        <p>{{ $elem.Summary }}</p>
+        {{ if $elem.Truncated }}
         <div>
             <a href={{ .Permalink }}>READ MORE</a>
         </div>

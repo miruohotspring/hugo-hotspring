@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else if .Page.Title }}{{ .Page.Title }} - {{ .Site.Title }}{{ end }}</title>
+<meta name="description"
+    content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+{{ with .Site.Params.author }}
+<meta name="author" content="{{ . }}">{{ end }}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+{{ $css := "css/main.css" | absURL }}
+<link rel="stylesheet" href="{{ $css }}">
+{{ $css := "css/custom.css" | absURL }}
+<link rel="stylesheet" href="{{ $css }}">
+{{ $css := "css/app.css" | absURL }}
+<link rel="stylesheet" href="{{ $css }}">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+
+{{ if .Site.Params.favicon }}
+<link rel="shortcut icon" href="/{{ .Site.Params.favicon }}" />
+
+{{ template "_internal/google_analytics.html" . }}
+
+{{ end }}

@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+<header class="title-area">
+    <div class="logo-area">
+        <a class="logo" href={{ .Site.BaseURL }}>みるを温泉</a>
+    </div>
+    <div class="content-wrapper" style="min-height: calc(45vh - 100px);">
+        <h1 style="color: white; position: absolute; bottom: 50px">{{ .Title }}</h1>
+        <div class="author-date" style="position: absolute; bottom: 0px">
+            <p>by <b><a href="/profile" style="color: #545454">{{ .Params.author }}</a></b>, {{ .PublishDate.Format "2006年1月2日 3:4" }}</p>
+        <p>{{ range .Params.tags }}
+            <span class='hashtag'><a href="/tags/{{ . }}/">#{{ . }}</a></span>
+        {{ end }}</p>
+        </div>
+    </div>
+</header>
+<div class="content-wrapper">
+    <div style="padding-top: 40px">
+        {{ .Content }}
+    </div>
+</div>
+
+{{ end }}

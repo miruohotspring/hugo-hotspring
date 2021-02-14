@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 87.5%;
+    line-height: 1.57143em;
+}
+html {
+    font-size: 14px;
+    line-height: 1.6em;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    background: #fcfcfc;
+    color: #545454;
+    text-rendering: optimizeLegibility;
+    font-family: "AvenirNext-Regular";
+}
