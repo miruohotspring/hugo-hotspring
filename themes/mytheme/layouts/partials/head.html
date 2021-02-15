@@ -3,13 +3,8 @@
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
 {{ with .Site.Params.author }}
 <meta name="author" content="{{ . }}">{{ end }}
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@miruohotspring" />
-<meta property="og:url" content={{ .Page.Permalink }} />
-<meta property="og:title" content={{ .Page.Title }} />
-{{ $img := "1036miruohotspring_round.png" | absURL }}
-<meta property="og:image" content={{ $img }} />
-
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">

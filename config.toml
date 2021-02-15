@@ -8,4 +8,7 @@ disableKinds = ["categories", "terms"]
     herolink = "https://miruohotspring.net/"
     herolinktext = "TOP"
     favicon = "favicon.ico"
+    twitterID = "@miruohotspring"
+    description = "温泉です"
+    images = ["1036miruohotspring_round.png"]
 
