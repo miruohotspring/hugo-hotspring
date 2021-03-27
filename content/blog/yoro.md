@@ -1,7 +1,7 @@
 ---
 title: "ブログ引っ越ししました"
 author: "miruo"
-tags: ["お知らせ", "日記"]
+tags: [お知らせ]
 date: 2021-02-15T08:07:35+09:00
 draft: false
 ---

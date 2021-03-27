@@ -12,3 +12,5 @@ disableKinds = ["categories", "terms"]
     description = "温泉です"
     images = ["miruohotspring@1096.png"]
 
+[taxonomies]
+  tag = "tags"

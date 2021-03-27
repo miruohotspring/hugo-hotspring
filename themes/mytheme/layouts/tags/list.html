@@ -10,7 +10,7 @@
 </header>
 
 <div class="content-wrapper" style="padding-top: 50px">
-{{ range $elem := .Data.Pages }}
+{{ range $elem := .Pages }}
     <div>
         {{ if $elem.Content }}
         <div class="author-date">
@@ -19,7 +19,7 @@
         {{ end }}
         <a href={{ .Permalink }}><h1>{{ $elem.Title }}</h1></a>
         <p>{{ range $elem.Params.tags }}
-            <span class='hashtag'><a href="/tags/{{ . }}/">#{{ . }}</a></span>
+            <span class='hashtag'><a href="/tags/{{ . }}">#{{ . }}</a></span>
             {{ end }}
         </p>
         <p>{{ $elem.Summary }}</p>
