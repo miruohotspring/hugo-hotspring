@@ -14,7 +14,7 @@
     <div>
         {{ if $elem.Content }}
         <div class="author-date">
-            <p>by <b><a href="/profile" style="color: #545454">{{ $elem.Params.author }}</a></b>, {{ $elem.PublishDate.Format "2006年1月2日 3:4" }}</p>
+            <p>by <b><a href="/profile" style="color: #545454">{{ $elem.Params.author }}</a></b>, {{ $elem.PublishDate.Format "2006年1月2日 3:04" }}</p>
         </div>
         {{ end }}
         <a href={{ .Permalink }}><h1>{{ $elem.Title }}</h1></a>
