@@ -3,6 +3,7 @@ languageCode = "ja"
 title = "温泉"
 theme = "mytheme"
 disableKinds = ["categories", "terms"]
+summaryLength = 20
 
 [params]
     herolink = "https://miruohotspring.net/"
