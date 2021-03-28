@@ -96,3 +96,19 @@ footer p{
     min-height: calc(45vh);
 }
 
+.pagination-div {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.next-page-div {
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+
+.prev-page-div {
+    width: 50%;
+    float: left;
+    text-align: left;
+}

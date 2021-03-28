@@ -10,7 +10,7 @@
 </header>
 
 <div class="content-wrapper" style="padding-top: 50px">
-{{ range $elem := .Pages }}
+{{ range $elem := .Paginator.Pages }}
     <div>
         {{ if $elem.Content }}
         <div class="author-date">
@@ -29,6 +29,10 @@
         <br>
     </div>
 {{ end }}
+    <div class="pagination-div">
+        <div class="prev-page-div">{{ if $.Paginator.HasPrev }}<a href="{{ $.Paginator.Prev.URL }}">{{ end }}前のページ</a></div>
+        <div class="next-page-div">{{ if $.Paginator.HasNext }}<a href="{{ $.Paginator.Next.URL }}">{{ end }}次のページ</a></div>
+    </div>
 </div>
 
 {{ end }}

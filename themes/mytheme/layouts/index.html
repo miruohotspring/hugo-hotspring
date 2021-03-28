@@ -10,7 +10,7 @@
 </header>
 
 <div class="content-wrapper" style="padding-top: 50px">
-{{ range .Site.RegularPages }}
+{{ range .Paginator.Pages }} 
     <div>
         <div class="author-date">
             <p>by <b><a href="/profile" style="color: #545454">{{ .Params.author }}</a></b>, {{ .PublishDate.Format "2006年1月2日 3:04" }}</p>
@@ -26,6 +26,10 @@
         </div>
     </div>
 {{ end }}
+    <div class="pagination-div">
+        <div class="prev-page-div">{{ if $.Paginator.HasPrev }}<a href="{{ $.Paginator.Prev.URL }}">{{ end }}前のページ</a></div>
+        <div class="next-page-div">{{ if $.Paginator.HasNext }}<a href="{{ $.Paginator.Next.URL }}">{{ end }}次のページ</a></div>
+    </div>
 </div>
 
 {{ end }}
