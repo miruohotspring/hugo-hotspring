@@ -23,11 +23,9 @@
             {{ end }}
         </p>
         <p>{{ $elem.Summary }}</p>
-        {{ if $elem.Truncated }}
         <div>
             <a href={{ .Permalink }}>READ MORE</a>
         </div>
-        {{ end }}
         <br>
     </div>
 {{ end }}

@@ -4,6 +4,8 @@ title = "温泉"
 theme = "mytheme"
 disableKinds = ["categories", "terms"]
 summaryLength = 20
+pygmentsCodefences = true
+pygmentsUseClasses = true
 
 [params]
     herolink = "https://miruohotspring.net/"

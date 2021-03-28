@@ -1,7 +1,7 @@
 ---
 title: "GitHub Actionsを利用してAWS Lambdaにコードをデプロイする"
 author: "miruo"
-tags: [AWS, 備忘録]
+tags: ["aws", "備忘録"]
 date: 2021-03-28T02:50:36+09:00
 draft: false
 ---
@@ -20,19 +20,19 @@ GitHub ActionsからAWSにアクセスするためのユーザーとそのポリ
 
     ```json
     {
-        "Version": "2012-10-17",
+      "Version": "2012-10-17",
         "Statement": [
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "s3:PutObject",
-                    "iam:ListRoles",
-                    "lambda:UpdateFunctionCode",
-                    "lambda:CreateFunction",
-                    "lambda:UpdateFunctionConfiguration"
-                ],
-                "Resource": "*"
-            }
+          {
+            "Effect": "Allow",
+            "Action": [
+              "s3:PutObject",
+              "iam:ListRoles",
+              "lambda:UpdateFunctionCode",
+              "lambda:CreateFunction",
+              "lambda:UpdateFunctionConfiguration"
+            ],
+            "Resource": "*"
+          }
         ]
     }
     ```
@@ -56,35 +56,35 @@ GitHub ActionsからAWSにアクセスするためのユーザーとそのポリ
 1. GitHub上でレポジトリ内のActionsタブをクリックすると.ymlの雛形を自動で生成してくれる
 2. .ymlに以下のコードを記載する
 
-```yaml
-name: YOUR_WORKFLOW_NAME
+    ```yaml
+    name: YOUR_WORKFLOW_NAME
 
-on:
-    push:
-        branches:
-            - <YOUR_BRANCH_NAME>
-    workflow_dispatch:
-        branches:
-            - <YOUR_BRANCH_NAME>
+    on:
+        push:
+            branches:
+                - YOUR_BRANCH_NAME
+        workflow_dispatch:
+            branches:
+                - YOUR_BRANCH_NAME
 
-jobs:
-    <YOUR_JOB_NAME>:
-        runs-on: <YOUR_ENVIRONMENT_NAME>
-        steps:
-            - uses: actions/checkout@v2
-                with:
-                    ref: <YOUR_BRANCH_NAME>
-            - uses: actions/setup-python@v1
-                with:
-                    python-version: 3.8
-            - run: zip -r package.zip ./*
-            - run: pip3 install awscli
-            - run: aws lambda update-function-code --function-name <YOUR_FUNCTION_NAME> --zip-file fileb://package.zip --publish
-                env:
-                    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-                    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-                    AWS_DEFAULT_REGION: <YOUR_REGION_NAME>
-```
+    jobs:
+        <YOUR_JOB_NAME>:
+            runs-on: YOUR_ENVIRONMENT_NAME
+            steps:
+                - uses: actions/checkout@v2
+                    with:
+                        ref: YOUR_BRANCH_NAME
+                - uses: actions/setup-python@v1
+                    with:
+                        python-version: 3.8
+                - run: zip -r package.zip ./*
+                - run: pip3 install awscli
+                - run: aws lambda update-function-code --function-name YOUR_FUNCTION_NAME --zip-file fileb://package.zip --publish
+                    env:
+                        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                        AWS_DEFAULT_REGION: YOUR_REGION_NAME
+    ```
 
 - YOUR_WORKFLOW_NAME ... workflow名。お好きなもので大丈夫です。
 - YOUR_BRANCH_NAME ... このブランチにpushした際にworkflowが実行される。ちなみにmasterの場合、actions/checkout@masterが利用できます。

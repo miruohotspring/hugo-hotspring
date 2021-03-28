@@ -60,7 +60,7 @@ footer p{
     min-height: calc(45vh - 100px);
     padding: 0 4%;
     margin: 0 auto;
-    margin-bottom: 5%;
+    padding-bottom: 50px;
     position: relative;
 }
 

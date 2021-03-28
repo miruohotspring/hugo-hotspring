@@ -188,8 +188,12 @@ hr {
 }
 ol,
 ul {
+    /*
     margin-bottom: 0.31429em;
     margin-left: 2em;
+    */
+    padding-inline-start: 1em;
+    margin-bottom: 2em;
 }
 ol ol,
 ol ul,
