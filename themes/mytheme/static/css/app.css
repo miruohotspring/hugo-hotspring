@@ -5,7 +5,7 @@ html, body{
 h1 {
     font-family: "AvenirNext-Medium";
     color: #333;
-    font-size: calc(1.67583rem + 1.13257 * ((100vw - 20rem)  / 100) );
+    font-size: min(2.4rem, calc(1.67583rem + 1.13257 * ((100vw - 20rem)  / 100) ));
     line-height: 1.3em;
     font-weight: bold;
 }

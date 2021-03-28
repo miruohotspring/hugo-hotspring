@@ -18,6 +18,10 @@
     <div style="padding-top: 40px">
         {{ .Content }}
     </div>
+    <div class="pagination-div">
+        <div class="prev-page-div">{{ if .Prev }}<a href="{{ .Prev.Permalink }}">{{ end }}前の記事</a></div>
+        <div class="next-page-div">{{ if .Next }}<a href="{{ .Next.Permalink }}">{{ end }}次の記事</a></div>
+    </div>
 </div>
 
 {{ end }}
