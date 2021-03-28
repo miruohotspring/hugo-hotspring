@@ -11,6 +11,7 @@
 
 <div class="content-wrapper" style="padding-top: 50px">
 {{ range .Paginator.Pages }} 
+    {{ if not .Params.secret }}
     <div>
         <div class="author-date">
             <p>by <b><a href="/profile" style="color: #545454">{{ .Params.author }}</a></b>, {{ .PublishDate.Format "2006年1月2日 3:04" }}</p>
@@ -25,6 +26,7 @@
             <a href={{ .Permalink }}>READ MORE</a>
         </div>
     </div>
+    {{ end }}
 {{ end }}
     <div class="pagination-div">
         <div class="prev-page-div">{{ if $.Paginator.HasPrev }}<a href="{{ $.Paginator.Prev.URL }}">{{ end }}前のページ</a></div>
