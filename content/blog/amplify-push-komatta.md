@@ -7,12 +7,12 @@ draft: false
 secret: false
 ---
 
-## 起きたこと
-```
+# 起きたこと
+```.txt
 Attempting to add and remove a global secondary index at the same time on the HogeHoge table in the HogeHoge stack. 
 ```
 
-## やったこと
+# やったこと
 global secondary indexを追加したり削除したりするなということなので、schema.graphqlの該当箇所をコメントアウト。
 
 ```.graphql
@@ -24,18 +24,18 @@ global secondary indexを追加したり削除したりするなということ�
 
 この状態で `amplify push` して、再びコメントアウトしてからもう一度 `push` 
 
-## 結果
-```
+# 結果
+```.txt
 Attempting to create an index which already exists
 ```
 resource failed to update, failed to createのオンパレード。どうして。
 
-## 敗北
+# 敗北
 結局、schema.graphqlのバックアップを取ってから `amplify remove api` して、再度 `amplify add api` しました。
 
 自動生成されたものの他にqueryやmutationを作成していた場合は、それらのバックアップも忘れずに。
 
-## まとめ
+# まとめ
 開発初期段階であれば問題ないのですが、かなり最終手段に近いです。
 
 こまめにpushするべきなのか、それとも何か方法があるのか・・・
