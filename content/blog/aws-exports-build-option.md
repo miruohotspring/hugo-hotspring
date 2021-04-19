@@ -1,5 +1,5 @@
 ---
-title: "Amplifyコンソールでビルド時にaws-exports.jsを自動生成"
+title: "[Amplify]ビルド時にaws-exportsを自動生成"
 author: "miruo"
 tags: ['aws', '備忘録']
 date: 2021-04-19T16:34:10+09:00
@@ -8,10 +8,10 @@ secret: false
 ---
 
 # 概要
-Amplify CLIを使ってAPIなどを追加していざコミットすると、コンソールでaws-exports not foundというようなエラーが出てビルドが失敗した話。
+Amplify CLIを使ってAPIなどを追加していざコミットすると、 ```Cannot find file './aws-exports' in './src'``` と言われてビルドが失敗した話。
 
 # 結論
-アプリケーションにロールを付与してビルドオプションに ```amplify push``` を追加すると、都度aws-exportsを生成してくれるようになる。
+アプリケーション自体にバックエンドのサービスをビルドする権限を付与して、ビルドオプションに ```amplify push``` を追加すると、都度aws-exportsを生成してくれるようになる。
 
 # 方法
 ## ロールの作成
@@ -39,3 +39,8 @@ backend:
 ```
 
 再度デプロイし直せば無事ビルドできるようになります。
+
+# 参考
+[Security related to committing aws-exports.jsv](https://github.com/aws-amplify/amplify-cli/issues/754)
+
+[Adding a service role to the Amplify Console when you connect an app](https://docs.aws.amazon.com/ja_jp/amplify/latest/userguide/how-to-service-role-amplify-console.html)
