@@ -1,5 +1,5 @@
 ---
-title: "Edm-Genre-Analyser-1"
+title: "Beatport x Spotify でEDMジャンル分類器を作る その1"
 author: "miruo"
 tags: ["プロジェクト"]
 date: 2021-09-15T03:09:46+09:00
