@@ -24,14 +24,14 @@ GoをインストールしてソースからHugoをビルドする。
 
 [ダウンロードページ](https://go.dev/dl/)からApple 64-bit processorと書かれているパッケージファイルをダウンロードして、インストールを行う。
 
-```
+```.sh
 $go version
 go version go1.18.1 darwin/arm64
 ```
 
 ## Hugoのビルド
 
-```
+```.sh
 $git clone https://github.com/gohugoio/hugo.git
 $cd hugo
 $go build
@@ -39,7 +39,7 @@ $go build
 
 すると、直下にhugoのバイナリファイルが作られている。
 
-```
+```.sh
 $./hugo version
 hugo v0.99.0-DEV-e5f21731696bd4a9a396936b18d9ae72291b01b1 darwin/arm64 BuildDate=2022-04-28T15:47:17Z
 $sudo mv ./hugo /usr/local/bin
