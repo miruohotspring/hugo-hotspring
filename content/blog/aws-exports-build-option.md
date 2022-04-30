@@ -7,6 +7,8 @@ draft: false
 secret: false
 ---
 
+※ビルドオプションを訂正しました
+
 # 概要
 Amplify CLIを使ってAPIなどを追加していざコミットすると、 ```Cannot find file './aws-exports' in './src'``` と言われてビルドが失敗した話。
 
@@ -28,19 +30,12 @@ backend:
   phases:
     build:
       commands:
-        - '# Get Amplify CLI Cloud-Formation stack info from environment cache'
-        - export STACKINFO="$(envCache --get stackInfo)"
-        - '# Execute Amplify CLI with the helper script'
-        - amplifyPush --environment $AWS_BRANCH
-        - '# Store Amplify CLI Cloud-Formation stack info in environment cache'
-        - >-
-          envCache --set stackInfo "$(amplify env get --json --name
-          $AWS_BRANCH)"
+        - amplifyPush --simple
 ```
 
 再度デプロイし直せば無事ビルドできるようになります。
 
 # 参考
-[Security related to committing aws-exports.jsv](https://github.com/aws-amplify/amplify-cli/issues/754)
+[Build Fails Only on Amplify with Error "Cannot find file '../aws-exports' in './src/components'." #5979](https://github.com/aws-amplify/amplify-js/issues/5979)
 
 [Adding a service role to the Amplify Console when you connect an app](https://docs.aws.amazon.com/ja_jp/amplify/latest/userguide/how-to-service-role-amplify-console.html)
